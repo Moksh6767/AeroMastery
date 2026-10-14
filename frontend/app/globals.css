@@ -1,0 +1,286 @@
+@import "tailwindcss";
+:root {
+  color-scheme: dark;
+  background: #09121d;
+  color: #e4edf6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+select,
+input,
+textarea {
+  border: 1px solid #334557;
+  background: #132434;
+  color: #edf6fb;
+  border-radius: 8px;
+  padding: 10px;
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  border-color: #52d7bb;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #52d7bb;
+  outline-offset: 3px;
+}
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+p {
+  margin-bottom: 10px;
+}
+small,
+.muted {
+  color: #94adc1;
+}
+header {
+  border-bottom: 1px solid #263e50;
+  background: #102030;
+  padding: 22px 30px;
+}
+.banner {
+  background: #243e3b;
+  color: #9be7c7;
+  padding: 9px 30px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.shell {
+  padding: 24px 30px;
+}
+.card {
+  background: #101e2c;
+  border: 1px solid #263e50;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 22px;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.value {
+  font-size: 30px;
+  color: #69e2c7;
+  font-weight: 700;
+}
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 18px;
+}
+nav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+nav button.active {
+  background: #2b655e;
+  border-color: #69e2c7;
+}
+.error {
+  background: #492f32;
+  color: #ffc5c8;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.success {
+  color: #96eccb;
+}
+.table-wrap {
+  overflow: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+th,
+td {
+  text-align: left;
+  padding: 12px 8px;
+  border-bottom: 1px solid #263e50;
+}
+th {
+  color: #95b2c9;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: #abc2d5;
+}
+pre {
+  white-space: pre-wrap;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  max-height: 400px;
+  overflow: auto;
+}
+.copilot {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+}
+.copilot textarea {
+  width: 100%;
+  min-height: 100px;
+  margin: 10px 0;
+}
+.answer {
+  white-space: pre-wrap;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+.timeline-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 45px;
+}
+.timeline-label {
+  width: 90px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.track {
+  position: relative;
+  height: 30px;
+  flex: 1;
+  background: repeating-linear-gradient(
+    90deg,
+    #112738 0,
+    #112738 calc(12.5% - 1px),
+    #345163 12.5%
+  );
+}
+.flight {
+  position: absolute;
+  height: 24px;
+  top: 3px;
+  background: #2c927e;
+  border-radius: 4px;
+  font-size: 9px;
+  overflow: hidden;
+  color: white;
+  padding: 4px;
+}
+.comparison {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.bar {
+  height: 20px;
+  background: #57c6b0;
+  border-radius: 3px;
+}
+.notice {
+  padding: 12px;
+  border: 1px solid #5d6550;
+  color: #e4cf9c;
+  border-radius: 8px;
+}
+.map {
+  height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.pill {
+  display: inline-block;
+  border: 1px solid #3a586c;
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 12px;
+}
+.stat {
+  background: #122738;
+  border-radius: 10px;
+  padding: 15px;
+}
+.source {
+  padding: 12px;
+  border-bottom: 1px solid #304758;
+}
+.proposal {
+  border: 1px solid #446456;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 14px 0;
+}
+@media (max-width: 1050px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .copilot {
+    position: static;
+  }
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .shell,
+  header {
+    padding: 16px;
+  }
+  .banner {
+    padding: 8px 16px;
+  }
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card {
+    padding: 14px;
+  }
+}

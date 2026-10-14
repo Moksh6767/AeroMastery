@@ -1,0 +1,14 @@
+{
+  "synthetic": true,
+  "seed": 42,
+  "features": [
+    "hours",
+    "faults",
+    "days_since_service"
+  ],
+  "training_rows": 1200,
+  "test_rows": 400,
+  "roc_auc": 0.6319318639291465,
+  "brier_score": 0.2357042787988243,
+  "weather_method": "declared synthetic scenario probability; no trained weather model"
+}

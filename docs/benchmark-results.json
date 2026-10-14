@@ -1,0 +1,191 @@
+{
+  "synthetic": true,
+  "scenario_count": 4,
+  "units": {
+    "time": "measured seconds",
+    "coverage": "fraction",
+    "changes": "assignment count"
+  },
+  "results": [
+    {
+      "seed": 42,
+      "preset": "baseline",
+      "fleet_size": 6,
+      "solver_status": "OPTIMAL",
+      "optimized": {
+        "coverage": 0.75,
+        "weighted_coverage": 0.8235294117647058,
+        "p1_coverage": 1.0,
+        "risk": 0.30700195891092524,
+        "disruption": 0.0,
+        "fuel": 216.0,
+        "slack": 47.5,
+        "planning_seconds": 0.0807461999993393,
+        "assets_utilized": 4,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      },
+      "greedy": {
+        "coverage": 0.625,
+        "weighted_coverage": 0.7058823529411765,
+        "p1_coverage": 1.0,
+        "risk": 0.3095221133146556,
+        "disruption": 0.0,
+        "fuel": 168.0,
+        "slack": 75.0,
+        "planning_seconds": 0.11879570000019157,
+        "assets_utilized": 4,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      },
+      "replanned": {
+        "coverage": 0.5,
+        "weighted_coverage": 0.5882352941176471,
+        "p1_coverage": 1.0,
+        "risk": 0.3133023449202512,
+        "disruption": 0.3333333333333333,
+        "fuel": 144.0,
+        "slack": 56.25,
+        "planning_seconds": 0.02100310000059835,
+        "assets_utilized": 4,
+        "crew_duty_violations": 0,
+        "changes_per_event": 2
+      }
+    },
+    {
+      "seed": 43,
+      "preset": "high-tempo",
+      "fleet_size": 6,
+      "solver_status": "OPTIMAL",
+      "optimized": {
+        "coverage": 0.4375,
+        "weighted_coverage": 0.5128205128205128,
+        "p1_coverage": 0.6666666666666666,
+        "risk": 0.30315330168588456,
+        "disruption": 0.0,
+        "fuel": 240.0,
+        "slack": 68.57142857142857,
+        "planning_seconds": 0.0737329999992653,
+        "assets_utilized": 5,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      },
+      "greedy": {
+        "coverage": 0.4375,
+        "weighted_coverage": 0.5128205128205128,
+        "p1_coverage": 0.6666666666666666,
+        "risk": 0.30315330168588456,
+        "disruption": 0.0,
+        "fuel": 240.0,
+        "slack": 68.57142857142857,
+        "planning_seconds": 0.3889593000003515,
+        "assets_utilized": 5,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      },
+      "replanned": {
+        "coverage": 0.4375,
+        "weighted_coverage": 0.5128205128205128,
+        "p1_coverage": 0.6666666666666666,
+        "risk": 0.30315330168588456,
+        "disruption": 0.0,
+        "fuel": 240.0,
+        "slack": 68.57142857142857,
+        "planning_seconds": 0.06534280000050785,
+        "assets_utilized": 5,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      }
+    },
+    {
+      "seed": 44,
+      "preset": "degraded-weather",
+      "fleet_size": 6,
+      "solver_status": "OPTIMAL",
+      "optimized": {
+        "coverage": 0.5,
+        "weighted_coverage": 0.625,
+        "p1_coverage": 1.0,
+        "risk": 0.60300175,
+        "disruption": 0.0,
+        "fuel": 132.0,
+        "slack": 33.75,
+        "planning_seconds": 0.029642700001204503,
+        "assets_utilized": 3,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      },
+      "greedy": {
+        "coverage": 0.5,
+        "weighted_coverage": 0.5625,
+        "p1_coverage": 1.0,
+        "risk": 0.60300175,
+        "disruption": 0.0,
+        "fuel": 144.0,
+        "slack": 41.25,
+        "planning_seconds": 0.08043279999947117,
+        "assets_utilized": 3,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      },
+      "replanned": {
+        "coverage": 0.375,
+        "weighted_coverage": 0.4375,
+        "p1_coverage": 0.5,
+        "risk": 0.6124406666666667,
+        "disruption": 0.25,
+        "fuel": 96.0,
+        "slack": 40.0,
+        "planning_seconds": 0.02392839999993157,
+        "assets_utilized": 2,
+        "crew_duty_violations": 0,
+        "changes_per_event": 1
+      }
+    },
+    {
+      "seed": 45,
+      "preset": "many-aircraft-down",
+      "fleet_size": 6,
+      "solver_status": "OPTIMAL",
+      "optimized": {
+        "coverage": 0.125,
+        "weighted_coverage": 0.15789473684210525,
+        "p1_coverage": 0.25,
+        "risk": 0.3054882079030009,
+        "disruption": 0.0,
+        "fuel": 48.0,
+        "slack": 90.0,
+        "planning_seconds": 0.013749099998676684,
+        "assets_utilized": 1,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      },
+      "greedy": {
+        "coverage": 0.125,
+        "weighted_coverage": 0.15789473684210525,
+        "p1_coverage": 0.25,
+        "risk": 0.3054882079030009,
+        "disruption": 0.0,
+        "fuel": 48.0,
+        "slack": 90.0,
+        "planning_seconds": 0.05282729999998992,
+        "assets_utilized": 1,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      },
+      "replanned": {
+        "coverage": 0.125,
+        "weighted_coverage": 0.15789473684210525,
+        "p1_coverage": 0.25,
+        "risk": 0.3054882079030009,
+        "disruption": 0.0,
+        "fuel": 48.0,
+        "slack": 90.0,
+        "planning_seconds": 0.02401780000036524,
+        "assets_utilized": 1,
+        "crew_duty_violations": 0,
+        "changes_per_event": 0
+      }
+    }
+  ]
+}

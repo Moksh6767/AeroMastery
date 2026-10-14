@@ -1,0 +1,31 @@
+{
+  "name": "relief-atlas-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "overrides": {
+    "postcss": "^8.5.23",
+    "sharp": "^0.35.5"
+  },
+  "scripts": {
+    "postinstall": "node scripts/prepare-map.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "maplibre-gl": "6.14.0",
+    "next": "15.5.27",
+    "react": "19.1.2",
+    "react-dom": "19.1.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.1.3",
+    "@types/node": "22.14.0",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
+    "prettier": "3.6.2",
+    "tailwindcss": "4.1.3",
+    "typescript": "5.8.3"
+  }
+}

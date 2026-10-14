@@ -1,0 +1,36 @@
+services:
+  database:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: relief
+      POSTGRES_USER: relief
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes: ["relief-db:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U relief"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://relief:${POSTGRES_PASSWORD}@database:5432/relief
+      RELIEF_PLANNER_TOKEN: ${RELIEF_PLANNER_TOKEN:?Set RELIEF_PLANNER_TOKEN}
+      RELIEF_APPROVER_TOKEN: ${RELIEF_APPROVER_TOKEN:?Set RELIEF_APPROVER_TOKEN}
+      RELIEF_VIEWER_TOKEN: ${RELIEF_VIEWER_TOKEN:?Set RELIEF_VIEWER_TOKEN}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      FRONTEND_ORIGIN: http://localhost:3000
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["relief-models:/app/relief_platform/runtime"]
+    depends_on:
+      database:
+        condition: service_healthy
+  frontend:
+    build: ./frontend
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on: [backend]
+volumes:
+  relief-db:
+  relief-models:
