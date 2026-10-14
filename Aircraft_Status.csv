@@ -1,0 +1,21 @@
+aircraft_id,type,base,fuel_pct,maintenance_status,flight_hours_since_service,next_service_due,mission_ready,last_updated
+AC-001,Fighter-A,Base Bravo,46,OK,62,2026-10-23,1,2026-10-14 13:33
+AC-002,Helo-E,Base Bravo,19,OK,12,2026-10-20,1,2026-10-14 13:04
+AC-003,Fighter-B,Base Alpha,86,OK,55,2026-11-25,1,2026-10-14 11:00
+AC-004,Helo-E,Base Bravo,90,OK,76,2026-10-15,1,2026-10-14 13:19
+AC-005,Recon-D,Base Alpha,42,OK,200,2026-11-05,1,2026-10-14 13:33
+AC-006,Fighter-A,Base Bravo,59,OK,159,2026-10-31,1,2026-10-14 13:48
+AC-007,Recon-D,Base Bravo,25,OK,146,2026-11-02,1,2026-10-14 11:19
+AC-008,Helo-E,Base Bravo,88,In Maintenance,54,2026-10-19,0,2026-10-14 13:48
+AC-009,Fighter-B,Base Alpha,44,Scheduled,226,2026-10-21,0,2026-10-14 12:22
+AC-010,Transport-C,Base Bravo,35,OK,99,2026-11-06,1,2026-10-14 13:06
+AC-011,Transport-C,Base Charlie,97,Scheduled,23,2026-11-22,0,2026-10-14 11:17
+AC-012,Fighter-B,Base Alpha,35,OK,123,2026-11-08,1,2026-10-14 12:50
+AC-013,Helo-E,Base Bravo,22,OK,63,2026-10-17,1,2026-10-14 12:39
+AC-014,Recon-D,Base Alpha,87,OK,229,2026-11-04,1,2026-10-14 13:05
+AC-015,Recon-D,Base Charlie,73,OK,41,2026-10-31,1,2026-10-14 13:24
+AC-016,Fighter-B,Base Charlie,48,Scheduled,196,2026-11-21,0,2026-10-14 12:10
+AC-017,Helo-E,Base Alpha,32,OK,135,2026-11-15,1,2026-10-14 13:36
+AC-018,Fighter-A,Base Alpha,95,In Maintenance,45,2026-11-27,0,2026-10-14 12:11
+AC-019,Helo-E,Base Bravo,91,OK,124,2026-11-17,1,2026-10-14 12:55
+AC-020,Helo-E,Base Alpha,29,In Maintenance,179,2026-11-18,0,2026-10-14 12:51

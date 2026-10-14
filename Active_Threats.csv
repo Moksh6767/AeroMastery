@@ -1,0 +1,13 @@
+threat_id,threat_type,latitude,longitude,severity,confidence_pct,status,first_detected,last_seen
+THR-001,Ground Convoy,26.9395,92.0642,Low,66,Monitoring,2026-10-13 16:00,2026-10-14 12:50
+THR-002,Ground Convoy,24.1577,87.0683,Critical,64,Neutralized,2026-10-12 17:00,2026-10-14 13:57
+THR-003,Drone Swarm,23.8038,85.059,High,59,Monitoring,2026-10-13 11:00,2026-10-14 12:51
+THR-004,Drone Swarm,27.9987,93.9781,Critical,54,Monitoring,2026-10-13 10:00,2026-10-14 12:57
+THR-005,Hostile Aircraft,23.8886,91.6887,Critical,86,Active,2026-10-13 08:00,2026-10-14 12:02
+THR-006,Surface-to-Air Site,29.8072,90.3412,Critical,77,Neutralized,2026-10-12 19:00,2026-10-14 13:56
+THR-007,Hostile Aircraft,26.4275,86.357,Critical,51,Active,2026-10-13 21:00,2026-10-14 13:11
+THR-008,Naval Vessel,22.1166,88.2685,Critical,57,Monitoring,2026-10-13 21:00,2026-10-14 12:13
+THR-009,Hostile Aircraft,24.7031,92.4902,Low,62,Active,2026-10-12 20:00,2026-10-14 13:51
+THR-010,Hostile Aircraft,27.5423,94.4961,Medium,93,Active,2026-10-12 22:00,2026-10-14 13:40
+THR-011,Surface-to-Air Site,21.2622,91.6946,Medium,69,Neutralized,2026-10-13 21:00,2026-10-14 12:21
+THR-012,Naval Vessel,21.6779,91.0725,Low,89,Active,2026-10-13 18:00,2026-10-14 13:46

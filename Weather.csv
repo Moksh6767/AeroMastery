@@ -1,0 +1,25 @@
+base,forecast_time,condition,temp_c,wind_kts,wind_dir_deg,visibility_km,ceiling_ft,flight_safe
+Base Alpha,2026-10-14 14:00,Fog,33,20,270,9.3,8879,0
+Base Alpha,2026-10-14 17:00,Clear,20,36,120,11.1,7644,1
+Base Alpha,2026-10-14 20:00,Clear,24,34,120,12.4,1646,1
+Base Alpha,2026-10-14 23:00,Fog,37,21,200,10.1,2541,0
+Base Alpha,2026-10-15 02:00,Fog,36,19,320,5.0,7191,0
+Base Alpha,2026-10-15 05:00,Overcast,20,18,350,9.5,7388,1
+Base Alpha,2026-10-15 08:00,Fog,38,24,110,9.4,5430,0
+Base Alpha,2026-10-15 11:00,Rain,25,0,190,4.7,7543,1
+Base Bravo,2026-10-14 14:00,Dust,26,38,200,7.2,7744,1
+Base Bravo,2026-10-14 17:00,Fog,14,32,300,12.0,3280,0
+Base Bravo,2026-10-14 20:00,Fog,10,18,320,10.1,10645,0
+Base Bravo,2026-10-14 23:00,Overcast,10,15,190,10.7,3762,1
+Base Bravo,2026-10-15 02:00,Partly Cloudy,8,2,150,19.8,10515,1
+Base Bravo,2026-10-15 05:00,Dust,32,4,290,6.5,10818,1
+Base Bravo,2026-10-15 08:00,Thunderstorm,14,24,310,12.8,2917,0
+Base Bravo,2026-10-15 11:00,Fog,30,0,60,11.8,4085,0
+Base Charlie,2026-10-14 14:00,Partly Cloudy,33,33,290,8.6,4582,1
+Base Charlie,2026-10-14 17:00,Dust,11,29,80,12.1,11437,1
+Base Charlie,2026-10-14 20:00,Thunderstorm,25,38,200,19.4,7751,0
+Base Charlie,2026-10-14 23:00,Thunderstorm,34,32,270,18.0,9476,0
+Base Charlie,2026-10-15 02:00,Rain,36,10,300,7.0,4550,1
+Base Charlie,2026-10-15 05:00,Dust,28,17,330,7.5,4419,1
+Base Charlie,2026-10-15 08:00,Overcast,22,4,180,10.8,6002,1
+Base Charlie,2026-10-15 11:00,Overcast,36,34,50,9.7,4288,1

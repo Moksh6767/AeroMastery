@@ -1,0 +1,25 @@
+item_id,base,item_name,category,quantity_on_hand,minimum_stock,status,last_audit
+INV-001,Base Alpha,Air-to-Air Missile (Generic),Missile,62,65,Low,2026-09-20
+INV-002,Base Alpha,Air-to-Ground Missile (Generic),Missile,296,72,OK,2026-09-25
+INV-003,Base Alpha,Guided Bomb (Generic),Bomb,393,39,OK,2026-09-15
+INV-004,Base Alpha,Unguided Bomb (Generic),Bomb,131,40,OK,2026-09-19
+INV-005,Base Alpha,20mm Rounds (belt),Ammunition,100,72,OK,2026-10-14
+INV-006,Base Alpha,Flare Pack,Countermeasure,101,114,Low,2026-09-15
+INV-007,Base Alpha,Chaff Pack,Countermeasure,180,120,OK,2026-09-15
+INV-008,Base Alpha,Drop Tank,Fuel,220,105,OK,2026-09-17
+INV-009,Base Bravo,Air-to-Air Missile (Generic),Missile,386,51,OK,2026-10-06
+INV-010,Base Bravo,Air-to-Ground Missile (Generic),Missile,91,120,Low,2026-09-22
+INV-011,Base Bravo,Guided Bomb (Generic),Bomb,65,68,Low,2026-09-17
+INV-012,Base Bravo,Unguided Bomb (Generic),Bomb,29,80,Low,2026-10-07
+INV-013,Base Bravo,20mm Rounds (belt),Ammunition,112,78,OK,2026-10-03
+INV-014,Base Bravo,Flare Pack,Countermeasure,166,49,OK,2026-10-07
+INV-015,Base Bravo,Chaff Pack,Countermeasure,22,104,Low,2026-10-08
+INV-016,Base Bravo,Drop Tank,Fuel,214,62,OK,2026-10-06
+INV-017,Base Charlie,Air-to-Air Missile (Generic),Missile,45,118,Low,2026-10-06
+INV-018,Base Charlie,Air-to-Ground Missile (Generic),Missile,189,102,OK,2026-09-28
+INV-019,Base Charlie,Guided Bomb (Generic),Bomb,214,106,OK,2026-09-18
+INV-020,Base Charlie,Unguided Bomb (Generic),Bomb,284,62,OK,2026-09-14
+INV-021,Base Charlie,20mm Rounds (belt),Ammunition,24,34,Low,2026-09-16
+INV-022,Base Charlie,Flare Pack,Countermeasure,143,42,OK,2026-09-26
+INV-023,Base Charlie,Chaff Pack,Countermeasure,145,24,OK,2026-10-11
+INV-024,Base Charlie,Drop Tank,Fuel,315,75,OK,2026-10-03

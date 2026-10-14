@@ -1,0 +1,31 @@
+crew_id,name,role,fatigue_score,hours_since_rest,duty_hours_last_7d,availability,assigned_aircraft_id,last_updated
+CR-001,Priya Chen,Flight Engineer,6,3.3,10,Rest Required,AC-009,2026-10-14 11:51
+CR-002,Sam Ivanov,Co-Pilot,3,8.1,19,Available,AC-012,2026-10-14 10:44
+CR-003,Aarav Ivanov,Navigator,3,8.5,41,Available,AC-001,2026-10-14 13:31
+CR-004,Maya Okafor,Loadmaster,6,12.5,15,Available,AC-003,2026-10-14 10:52
+CR-005,Leila Chen,Co-Pilot,8,11.8,52,Rest Required,AC-016,2026-10-14 11:39
+CR-006,Tara Khan,Co-Pilot,3,5.2,44,Rest Required,AC-007,2026-10-14 10:57
+CR-007,Sam Moreau,Pilot,5,6.8,25,Available,AC-008,2026-10-14 13:43
+CR-008,Leila Okafor,Loadmaster,6,2.3,24,Rest Required,AC-001,2026-10-14 13:41
+CR-009,Maya Silva,Pilot,1,4.7,42,Rest Required,AC-008,2026-10-14 12:48
+CR-010,Noah Ivanov,Loadmaster,8,4.6,40,Rest Required,AC-008,2026-10-14 10:39
+CR-011,Ethan Reyes,Pilot,8,11.7,52,Rest Required,AC-014,2026-10-14 12:29
+CR-012,Sofia Sharma,Flight Engineer,7,6.9,56,Medical Hold,AC-011,2026-10-14 10:35
+CR-013,Ethan Das,Flight Engineer,2,5.0,18,Rest Required,AC-014,2026-10-14 13:13
+CR-014,Leila Reyes,Pilot,5,7.6,51,Medical Hold,AC-018,2026-10-14 10:25
+CR-015,Zara Khan,Flight Engineer,1,13.6,40,Available,AC-007,2026-10-14 10:18
+CR-016,Lucas Novak,Flight Engineer,7,12.8,28,Medical Hold,AC-014,2026-10-14 11:01
+CR-017,Anika Chen,Co-Pilot,9,9.9,28,Rest Required,AC-007,2026-10-14 13:45
+CR-018,Maya Silva,Pilot,10,10.8,13,Rest Required,AC-019,2026-10-14 11:57
+CR-019,Sam Chen,Pilot,9,13.0,42,Rest Required,AC-003,2026-10-14 10:22
+CR-020,Liam Okafor,Flight Engineer,3,2.8,17,Rest Required,AC-019,2026-10-14 12:56
+CR-021,Tara Reyes,Flight Engineer,10,9.1,52,Rest Required,AC-019,2026-10-14 11:35
+CR-022,Omar Okafor,Navigator,9,5.8,25,Rest Required,AC-009,2026-10-14 12:18
+CR-023,Liam Sharma,Flight Engineer,3,10.1,49,Available,AC-019,2026-10-14 13:34
+CR-024,Nina Reyes,Co-Pilot,2,8.5,33,Available,AC-010,2026-10-14 13:19
+CR-025,Elena Ivanov,Loadmaster,8,12.0,10,Rest Required,AC-018,2026-10-14 12:43
+CR-026,Sofia Das,Co-Pilot,2,13.3,27,Available,AC-010,2026-10-14 11:25
+CR-027,Omar Das,Flight Engineer,4,10.6,26,Available,AC-002,2026-10-14 13:36
+CR-028,Kabir Chen,Navigator,7,12.0,20,On Leave,AC-015,2026-10-14 11:38
+CR-029,Noah Das,Pilot,7,8.7,33,Available,AC-019,2026-10-14 11:38
+CR-030,Nina Sharma,Navigator,3,7.2,23,On Leave,AC-008,2026-10-14 11:09
