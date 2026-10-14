@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Relief Atlas · Civilian scheduling lab</title>
+  <style>
+    :root{--bg:#0b1120;--panel:#131e30;--panel2:#17253a;--line:#2b3a50;--ink:#eef3fb;--muted:#a7b8ce;--accent:#61dec2;--blue:#88baff;--amber:#ffd28c;--red:#ffabae;--radius:16px}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 10% 0%,#172a40 0,transparent 45%),var(--bg);color:var(--ink);font:14px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{outline-offset:4px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent)}a{color:var(--blue)}button,.button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:39px;padding:8px 13px;background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:9px;cursor:pointer;text-decoration:none;font-weight:600}button:hover,.button:hover{border-color:var(--accent);background:#20364a}button.primary{background:var(--accent);border-color:var(--accent);color:#082d28}button:disabled{opacity:.48;cursor:wait}input:not([type=range]),select,textarea{width:100%;background:#0d1727;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 10px;min-height:41px}textarea{resize:vertical;min-height:83px}input[type=range]{width:100%;accent-color:var(--accent)}label{display:block;font-size:12px;font-weight:600;color:var(--muted)}label input,label select,label textarea{margin-top:5px}h1,h2,h3,p{margin-top:0}h1{font-size:25px;letter-spacing:-.7px;margin-bottom:2px}h2{font-size:16px;margin-bottom:4px}h3{font-size:13px;margin-bottom:6px}p{margin-bottom:12px}.muted,.sub{color:var(--muted)}.sub{font-size:12px;margin-bottom:0}.eyebrow{color:var(--accent);font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700}.mono{font-family:ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums}.shell{max-width:1520px;margin:auto;padding:25px 30px 40px}.topbar,.row,.section-head{display:flex;align-items:center;gap:12px;justify-content:space-between}.topbar{margin-bottom:20px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:13px}.mark{display:grid;place-items:center;width:44px;height:44px;border:1px solid #3d776f;border-radius:14px;background:#143c3a;color:var(--accent);font-size:29px;font-weight:300}.actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill{display:inline-block;border:1px solid var(--line);border-radius:30px;padding:4px 10px;font-size:11px;color:var(--muted);white-space:nowrap}.pill.good{color:var(--accent);border-color:#315f56}.pill.warn{color:var(--amber);border-color:#79613f}.notice{border:1px solid #695738;border-radius:12px;padding:11px 15px;background:#302b22;color:var(--amber);font-size:12px;margin-bottom:16px}.connection{min-height:23px;font-size:12px;color:var(--muted);margin-bottom:12px}.connection.error{color:var(--red)}.panel{background:linear-gradient(150deg,var(--panel),#111b2b);border:1px solid var(--line);border-radius:var(--radius);padding:20px;min-width:0}.section-head{margin-bottom:16px;align-items:flex-start}.clockbar{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:16px}.clock{min-width:210px;flex:1}.clock time{display:block;font-size:23px;font-weight:650;letter-spacing:-.5px}.clock-controls{display:flex;align-items:flex-end;gap:9px;flex-wrap:wrap}.clock-controls label{min-width:95px}.clock-controls input{max-width:115px}.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-bottom:18px}.kpi{padding:16px}.kpi .value{display:block;font-size:25px;letter-spacing:-.5px;font-weight:650;white-space:nowrap}.kpi .label{display:block;color:var(--muted);font-size:11px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.9px}.kpi small{font-size:11px;color:var(--muted)}.kpi:first-child .value{color:var(--accent)}.grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(330px,1fr);gap:18px;align-items:start}.stack{display:grid;gap:18px}.table-wrap{overflow:auto;max-height:385px}table{width:100%;border-collapse:collapse;font-size:12px;text-align:left;white-space:nowrap}th{color:var(--muted);font-size:10px;letter-spacing:.6px;text-transform:uppercase;background:#121e30;position:sticky;top:0;z-index:1}td,th{padding:11px 9px;border-bottom:1px solid #243248}tbody tr:hover{background:#19283b}.empty{color:var(--muted);padding:17px 0;font-size:12px}.detail-list{display:grid;gap:10px;max-height:300px;overflow:auto}.detail-item{border:1px solid var(--line);border-radius:10px;padding:12px;background:#0f1a2b}.detail-item p:last-child{margin-bottom:0}.detail-item ul{padding-left:19px;margin:5px 0;color:var(--muted);font-size:12px}.event{border-left:2px solid #385e71;padding:0 0 12px 13px;margin-left:3px}.event:last-child{padding-bottom:0}.event p{font-size:12px;margin:3px 0 0}.event small{color:var(--muted);font-size:10px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{grid-column:1/-1}.divider{border-top:1px solid var(--line);margin:18px 0}.sliders{display:grid;gap:11px}.slider-label{display:flex;justify-content:space-between;gap:10px}.slider-label output{color:var(--accent);font-variant-numeric:tabular-nums}.status-text{font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted);margin:12px 0 0}.result{border:1px solid #315c60;background:#10282c;border-radius:10px;padding:13px;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.65 ui-monospace,Consolas,monospace;max-height:350px;overflow:auto;margin:14px 0 0}.chart{width:100%;height:auto;display:block;min-height:160px}.chart text{font-family:system-ui,sans-serif;fill:var(--muted);font-size:11px}.chart .dot{fill:var(--accent);stroke:#101a2a;stroke-width:3;cursor:pointer}.chart .dot:hover,.chart .dot:focus{fill:var(--amber);stroke:var(--ink)}details summary{cursor:pointer;color:var(--blue);font-size:12px}details[open] summary{margin-bottom:12px}.small-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.footer{margin-top:24px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}[hidden]{display:none!important}.skip{position:absolute;top:-100px}.skip:focus{top:8px;left:8px;background:var(--panel);padding:8px;z-index:10}
+    @media(min-width:1200px){.wide-panel{grid-column:1/-1}}@media(max-width:1100px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.grid{grid-template-columns:minmax(0,1.2fr) minmax(310px,1fr)}.shell{padding:20px}.clockbar{gap:15px}}@media(max-width:800px){.grid{grid-template-columns:1fr}.shell{padding:16px}.topbar{align-items:flex-start}.clockbar{align-items:flex-start}.clock{flex-basis:100%}.panel{padding:16px}.kpi{padding:13px}.kpi .value{font-size:22px}}@media(max-width:450px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.form-grid,.small-grid{grid-template-columns:1fr}.full{grid-column:auto}.section-head{flex-wrap:wrap}.clock-controls{width:100%}h1{font-size:22px}.actions .button{font-size:12px}.shell{padding:12px}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to dashboard</a>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand"><div class="mark" aria-hidden="true">+</div><div><div class="eyebrow">Civilian response · simulation</div><h1>Relief Atlas</h1><p class="sub">Relief flights, resources &amp; transparent decisions</p></div></div>
+    <nav class="actions" aria-label="Data downloads"><span class="pill" id="live-status">Connecting</span><a class="button" href="/api/benchmarks" target="_blank" rel="noopener">Benchmark JSON ↗</a><a class="button" href="/api/benchmarks/scaling" target="_blank" rel="noopener" title="Generated SVG; available after the full benchmark run completes">Scaling chart ↗</a><a class="button" href="/api/export" download="civilian-dispatch.json">Export dispatch ↓</a></nav>
+  </header>
+  <div class="notice"><strong>Simulation only.</strong> Synthetic civilian relief scheduling with heuristic candidates, not guaranteed optimal plans. Uncertainty estimates are synthetic, not safety assurance. Not for certified flight use or real dispatch. Core features need no internet; optional weather retrieval requires an explicit click.</div>
+  <div id="connection" class="connection" role="status" aria-live="polite">Waiting for the local simulation server…</div>
+  <main id="main">
+    <section class="panel clockbar" aria-label="Simulation controls">
+      <div class="clock"><div class="eyebrow">Simulation clock</div><time id="sim-time">—</time><div class="sub mono" id="clock-meta">No state received</div></div>
+      <div class="clock-controls"><button id="pause" class="primary" disabled>Pause / resume</button><form id="speed-form" class="clock-controls"><label>Clock speed<select id="speed" aria-label="Clock speed"><option value="1">1×</option><option value="5">5×</option><option value="10">10×</option><option value="30">30×</option><option value="60">60×</option></select></label><button type="submit">Set speed</button></form></div>
+      <form id="reset-form" class="clock-controls"><label>Simulation seed<input id="seed" type="number" step="1" value="42" required></label><button type="submit" title="Reset the simulation to the selected seed">Reset demo</button></form>
+    </section>
+    <section class="kpis" aria-label="Current plan metrics">
+      <article class="panel kpi"><span class="label">Coverage</span><span class="value mono" id="k-coverage">—</span><small id="p1">Priority 1: —</small></article>
+      <article class="panel kpi"><span class="label">Risk score</span><span class="value mono" id="k-risk">—</span><small>Synthetic model score</small></article>
+      <article class="panel kpi"><span class="label">Disruption</span><span class="value mono" id="k-disruption">—</span><small>Current plan score</small></article>
+      <article class="panel kpi"><span class="label">Fuel</span><span class="value mono" id="k-fuel">—</span><small>Model fuel units</small></article>
+      <article class="panel kpi"><span class="label">Slack</span><span class="value mono" id="k-slack">—</span><small>Model slack score</small></article>
+      <article class="panel kpi"><span class="label">Robustness</span><span class="value mono" id="k-robustness">—</span><small id="confidence">Interval unavailable</small><p id="robustness-note" class="sub" style="margin-top:8px">Robustness limitations have not loaded.</p></article>
+    </section>
+    <div class="grid">
+      <div class="stack">
+        <section class="panel">
+          <div class="section-head"><div><h2>Relief flight schedule</h2><p class="sub">Assigned tasks · all schedule times are simulation minutes</p></div><span class="pill" id="assignment-count">— assignments</span></div>
+          <div class="table-wrap"><table><caption class="sub" style="text-align:left;padding-bottom:10px" id="plan-meta">Waiting for a plan</caption><thead><tr><th scope="col">Task / purpose</th><th scope="col">Priority</th><th scope="col">Aircraft</th><th scope="col">Crew</th><th scope="col">Base</th><th scope="col">Start</th><th scope="col">End</th><th scope="col">Fuel</th></tr></thead><tbody id="assignments"><tr><td colspan="8" class="empty">Schedule has not loaded.</td></tr></tbody></table></div>
+        </section>
+        <section class="panel"><div class="section-head"><div><h2>Scheduling diagnostics</h2><p class="sub">Unscheduled tasks, constraint explanations &amp; suggested changes</p></div><span class="pill warn" id="unscheduled-count">—</span></div><div class="detail-list" id="diagnostics"><p class="empty">Diagnostics have not loaded.</p></div></section>
+        <section class="panel">
+          <div class="section-head"><div><h2>Candidate trade-offs</h2><p class="sub">Coverage versus risk · select a point for details</p></div><button id="frontier-load">Load candidates</button></div>
+          <svg id="frontier" class="chart" viewBox="0 0 620 270" role="group" aria-label="Candidate coverage versus risk scatter plot"><text x="310" y="125" text-anchor="middle">Load candidates to view the comparison.</text></svg>
+          <p id="frontier-note" class="sub">Heuristic candidates are comparisons, not proof of an optimal frontier. Metric values are shown as reported by the model.</p><div id="frontier-detail" class="result" hidden></div>
+        </section>
+        <section class="panel"><div class="section-head"><div><h2>Resources &amp; tasks</h2><p class="sub">Current aircraft readiness and relief request windows</p></div></div><details><summary>Aircraft availability</summary><div class="table-wrap"><table><thead><tr><th scope="col">Aircraft</th><th scope="col">Base</th><th scope="col">Ready</th><th scope="col">Fuel</th><th scope="col">Serviceability</th></tr></thead><tbody id="aircraft"></tbody></table></div></details><div class="divider"></div><details><summary>All relief tasks</summary><div class="table-wrap"><table><thead><tr><th scope="col">Task</th><th scope="col">Kind</th><th scope="col">Priority</th><th scope="col">Base</th><th scope="col">Earliest</th><th scope="col">Deadline</th><th scope="col">Duration</th><th scope="col">Status</th></tr></thead><tbody id="tasks"></tbody></table></div></details></section>
+        <section class="panel"><div class="section-head"><div><h2>Simulation event feed</h2><p class="sub">Latest reported events · refreshed every two seconds</p></div></div><div id="events" class="detail-list"><p class="empty">Events have not loaded.</p></div></section>
+      </div>
+      <div class="stack">
+        <section class="panel"><div class="section-head"><div><h2>Planning preferences</h2><p class="sub">Relative weights · changes sent after a short pause</p></div><span class="pill">Human directed</span></div><div id="sliders" class="sliders"></div><p id="weight-status" class="status-text" role="status">Waiting for current weights. At least one weight must be positive.</p></section>
+        <section class="panel">
+          <div class="section-head"><div><h2>What-if workspace</h2><p class="sub">Pause before generating a preview, then keep the simulation paused through both reviews. Clock, state, or preference changes make the proposal stale. A preview does not apply a change.</p></div></div>
+          <form id="whatif-form" class="form-grid">
+            <label class="full">Scenario<select id="scenario"><option value="aircraft_delay">Aircraft readiness delay</option><option value="base_closure">Temporary base closure</option><option value="relief_request">New relief request</option></select></label>
+            <label id="aircraft-field" class="full">Aircraft<select id="scenario-aircraft" required><option value="">Waiting for aircraft</option></select></label>
+            <label id="base-field" class="full" hidden>Base<select id="scenario-base" disabled><option value="">Waiting for bases</option></select></label>
+            <label id="minutes-field" class="full">Delay / closure length (minutes)<input id="scenario-minutes" type="number" min="15" max="240" step="1" value="60" required></label>
+            <label id="priority-field" hidden>Priority<select id="scenario-priority" disabled><option value="1">1 · highest</option><option value="2">2</option><option value="3">3</option></select></label>
+            <label id="duration-field" hidden>Duration (minutes)<input id="scenario-duration" type="number" min="30" max="120" step="1" value="60" disabled required></label>
+            <button type="submit" class="primary full">Generate preview</button>
+          </form>
+          <div class="divider"></div>
+          <form id="copilot-form"><label>Plain-language scenario<textarea id="copilot-text" placeholder="Describe an aircraft delay, a temporary base closure, or a new relief request." maxlength="4000" required></textarea></label><div class="row" style="margin-top:10px;align-items:flex-end"><label style="flex:1">Local provider<select id="provider"><option value="rules">Rules · no model required</option><option value="ollama">Ollama · local setup required</option></select></label><button type="submit">Preview text</button></div></form>
+          <p class="sub" style="margin-top:12px">The copilot proposes a structured scenario; it does not authorize dispatch. Provider availability and interpretation are validated by the server.</p>
+          <div id="preview" class="result" role="status" aria-live="polite">No preview requested. No changes have been proposed here.</div>
+        </section>
+        <section class="panel">
+          <div class="section-head"><div><h2>Review &amp; approvals</h2><p class="sub">Server-enforced reviewer identity and approval rules</p></div></div><div id="pending" class="detail-list"><p class="empty">Pending proposals have not loaded.</p></div>
+          <form id="approval-form" class="form-grid" style="margin-top:16px"><label class="full">Proposal ID<input id="proposal-id" required autocomplete="off"></label><label>Reviewer<input id="reviewer" required autocomplete="off" placeholder="Configured reviewer"></label><label>Reviewer token<input id="reviewer-token" type="password" required autocomplete="off" spellcheck="false"></label><button class="full" type="submit">Submit reviewer approval</button></form>
+          <p class="sub" style="margin-top:10px">Two distinct reviewer approvals are required: reviewer-a and reviewer-b. Use each reviewer's separate token printed in the server console (randomly generated unless CIVILIAN_REVIEWER_A and CIVILIAN_REVIEWER_B are configured). There are no default token strings. Tokens are not stored by this dashboard. Keep the simulation paused and preferences unchanged until both reviews finish. This local demo does not establish two independently authenticated humans.</p><p id="approval-status" class="status-text" role="status"></p>
+        </section>
+        <section class="panel"><div class="section-head"><div><h2>Integrity &amp; contingencies</h2><p class="sub">Audit verification is not a flight-safety certification</p></div><button id="verify">Verify audit</button></div><p id="audit" class="status-text" role="status">Audit state has not loaded.</p><div class="divider"></div><div id="contingencies" class="detail-list"><p class="empty">Contingencies have not loaded.</p></div></section>
+        <section class="panel"><div class="section-head"><div><h2>Optional weather observation</h2><p class="sub">Explicit external request · informational preview only</p></div></div><form id="weather-form" class="form-grid"><label class="full">Base label<select id="weather-base" required><option value="">Waiting for bases</option></select></label><label>Latitude<input id="latitude" type="number" min="-90" max="90" step="any" placeholder="e.g. 19.076" required></label><label>Longitude<input id="longitude" type="number" min="-180" max="180" step="any" placeholder="e.g. 72.878" required></label><button class="full" type="submit">Fetch Open-Meteo observation</button></form><p class="sub" style="margin-top:10px">Coordinates are sent through the server to the weather provider only on request. Observations never change scheduling safety decisions.</p><div id="weather-result" class="result" role="status" hidden></div></section>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"><span>RELIEF ATLAS / Civilian scheduling lab</span><span>Local-first · No external assets · Synthetic data and uncertainty · Human-reviewed changes</span></footer>
+</div>
+<script>
+'use strict';
+(() => {
+  const $ = id => document.getElementById(id);
+  const weightKeys = ['coverage', 'risk', 'disruption', 'fuel', 'slack'];
+  const metricKeys = [...weightKeys, 'p1_coverage', 'robustness', 'samples', 'latency_ms'];
+  const labels = {coverage:'Coverage',risk:'Risk',disruption:'Disruption',fuel:'Fuel',slack:'Slack',p1_coverage:'Priority 1 coverage',robustness:'Robustness',samples:'Synthetic samples',latency_ms:'Latency (ms)'};
+  let state = null, polling = false, requestSequence = 0, appliedSequence = 0;
+  let mutationQueue = Promise.resolve(), mutations = 0;
+  let weightTimer = null, weightsDirty = false, weightRevision = 0;
+  let auditVerification = null;
+  const list = value => Array.isArray(value) ? value : [];
+  const text = value => value === null || value === undefined ? '—' : typeof value === 'object' ? JSON.stringify(value) : String(value);
+  const numeric = value => typeof value === 'number' && Number.isFinite(value);
+  const fmt = value => numeric(value) ? new Intl.NumberFormat(undefined,{maximumFractionDigits:3}).format(value) : text(value);
+  const percent = value => numeric(value) ? new Intl.NumberFormat(undefined,{style:'percent',maximumFractionDigits:1}).format(value) : text(value);
+  const fractionMetrics = new Set(['coverage','p1_coverage','risk','disruption','robustness']);
+  const metricFmt = (key,value) => fractionMetrics.has(key) ? percent(value) : fmt(value);
+  const intervalFmt = value => Array.isArray(value) && value.length === 2 ? value.map(percent).join(' – ') : 'unavailable';
+  const minute = value => numeric(value) ? `T+${fmt(value)}` : text(value);
+  function element(tag, value, className) {
+    const node = document.createElement(tag);
+    if (value !== undefined) node.textContent = text(value);
+    if (className) node.className = className;
+    return node;
+  }
+  function announce(message, error = false) {
+    $('connection').textContent = message;
+    $('connection').classList.toggle('error', error);
+  }
+  async function api(path, body, timeout = 15000) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    try {
+      const response = await fetch(path, {method:body === undefined ? 'GET' : 'POST',headers:body === undefined ? {'Accept':'application/json'} : {'Accept':'application/json','Content-Type':'application/json'},body:body === undefined ? undefined : JSON.stringify(body),signal:controller.signal,cache:'no-store'});
+      let data;
+      try { data = await response.json(); } catch { throw new Error(`Server returned a non-JSON response (${response.status}).`); }
+      if (!response.ok || data?.error) throw new Error(text(data?.error || `Request failed (${response.status}).`));
+      return data;
+    } catch (error) {
+      if (error.name === 'AbortError') throw new Error('Request timed out. Check server state before retrying a change.');
+      throw error;
+    } finally { clearTimeout(timer); }
+  }
+  async function busy(button, work, output) {
+    button.dataset.busy = 'true';
+    button.disabled = true;
+    try { await work(); }
+    catch (error) {
+      announce(error.message || 'Request failed.', true);
+      if (output) { output.hidden = false; output.textContent = `Request failed: ${error.message}`; }
+    } finally { delete button.dataset.busy; button.disabled = false; }
+  }
+  function applyState(data, sequence) {
+    if (!data || typeof data !== 'object' || !numeric(data.sim_minute) || !data.plan) throw new Error('The server response did not contain a valid simulation state.');
+    if (sequence < appliedSequence) return;
+    appliedSequence = sequence;
+    state = data;
+    render();
+    $('live-status').textContent = data.paused ? 'Simulation paused' : 'Simulation running';
+    $('live-status').className = `pill ${data.paused ? 'warn' : 'good'}`;
+    announce(`Connected to local simulation · Updated ${new Date().toLocaleTimeString()} · Fractional metrics shown as percentages; no live flight data.`);
+  }
+  async function changeState(path, body) {
+    mutations++;
+    const request = mutationQueue.then(async () => {
+      const sequence = ++requestSequence;
+      appliedSequence = sequence;
+      const result = await api(path, body);
+      applyState(result, sequence);
+      return result;
+    });
+    mutationQueue = request.catch(() => {});
+    try { return await request; } finally { mutations--; }
+  }
+  async function poll() {
+    if (polling || mutations || document.hidden) return;
+    polling = true;
+    const sequence = ++requestSequence;
+    try { applyState(await api('/api/state'), sequence); }
+    catch (error) {
+      if (sequence >= appliedSequence) {
+        $('live-status').textContent = 'Connection interrupted';
+        $('live-status').className = 'pill warn';
+        announce(`State refresh failed: ${error.message} Displayed data may be stale. Retrying automatically.`, true);
+      }
+    } finally { polling = false; }
+  }
+  function tableRows(id, rows, columns, emptyMessage) {
+    const target = $(id);
+    const fragment = document.createDocumentFragment();
+    for (const row of rows) {
+      const tr = element('tr');
+      for (const column of columns) tr.append(element('td', column(row)));
+      fragment.append(tr);
+    }
+    if (!rows.length) {
+      const tr = element('tr'), td = element('td', emptyMessage, 'empty');
+      td.colSpan = columns.length; tr.append(td); fragment.append(tr);
+    }
+    target.replaceChildren(fragment);
+  }
+  function renderList(id, values, build, emptyMessage) {
+    $(id).replaceChildren(...(values.length ? values.map(build) : [element('p',emptyMessage,'empty')]));
+  }
+  function updateOptions(id, values) {
+    const select = $(id), previous = select.value;
+    const unique = [...new Set(values.filter(value => value !== undefined && value !== null).map(String))];
+    const key = JSON.stringify(unique);
+    if (select.dataset.options === key) return;
+    select.dataset.options = key;
+    select.replaceChildren(...unique.map(value => { const option = element('option',value); option.value = value; return option; }));
+    if (!unique.length) { const option = element('option','No resources available'); option.value = ''; select.append(option); }
+    if (unique.includes(previous)) select.value = previous;
+  }
+  function auditText(audit) {
+    if (!audit) return 'Audit information unavailable.';
+    const count = Array.isArray(audit.entries) ? audit.entries.length : text(audit.entries);
+    return `${audit.valid === true ? 'Integrity verified' : audit.valid === false ? 'Integrity check FAILED' : 'Integrity not verified'} · ${count} entries${audit.error ? `\n${text(audit.error)}` : ''}`;
+  }
+  function render() {
+    const plan = state.plan || {}, metrics = plan.metrics || {};
+    const date = new Date(state.sim_time);
+    $('sim-time').textContent = Number.isNaN(date.getTime()) ? text(state.sim_time) : `${date.toISOString().replace('T',' ').replace('.000Z',' UTC')}`;
+    if (!Number.isNaN(date.getTime())) $('sim-time').dateTime = date.toISOString();
+    $('clock-meta').textContent = `${minute(state.sim_minute)} min · ${fmt(state.speed)}× · seed ${text(state.seed)} · version ${text(state.version)}`;
+    $('pause').textContent = state.paused ? 'Resume simulation' : 'Pause simulation';
+    $('pause').disabled = $('pause').dataset.busy === 'true';
+    if (document.activeElement !== $('speed')) {
+      const speed = String(state.speed);
+      if (![...$('speed').options].some(option => option.value === speed)) { const option = element('option',`${speed}×`); option.value = speed; $('speed').append(option); }
+      $('speed').value = speed;
+    }
+    if (document.activeElement !== $('seed')) $('seed').value = state.seed;
+    for (const key of [...weightKeys,'robustness']) $('k-' + key).textContent = metricFmt(key,metrics[key]);
+    $('p1').textContent = `Priority 1: ${percent(metrics.p1_coverage)}`;
+    const ci = list(metrics.robustness_ci);
+    $('confidence').textContent = ci.length === 2 ? `CI ${intervalFmt(ci)} · n=${fmt(metrics.samples)}` : `Interval unavailable · n=${fmt(metrics.samples)}`;
+    $('robustness-note').textContent = metrics.robustness_note || 'Robustness limitations were not supplied by the server; synthetic estimates are not safety assurance.';
+    $('plan-meta').textContent = `Method: ${text(plan.method)} · reported latency ${fmt(metrics.latency_ms)} ms · heuristic, not guaranteed optimal`;
+    const tasks = list(state.tasks), assignments = list(plan.assignments), unscheduled = list(plan.unscheduled);
+    const taskMap = new Map(tasks.map(task => [task.id, task]));
+    $('assignment-count').textContent = `${assignments.length} assignments`;
+    tableRows('assignments', assignments, [a => `${text(a.task_id)} / ${text(taskMap.get(a.task_id)?.kind)}`, a => text(taskMap.get(a.task_id)?.priority), a => a.aircraft_id, a => a.crew_id, a => a.base, a => minute(a.start), a => minute(a.end), a => fmt(a.fuel)],'No assignments in the current plan.');
+    $('unscheduled-count').textContent = `${unscheduled.length} unscheduled`;
+    renderList('diagnostics',unscheduled,item => {
+      const card = element('article',undefined,'detail-item'); card.append(element('h3',item.task_id));
+      const reasons = element('ul');
+      for (const reason of list(item.reasons)) reasons.append(element('li',reason));
+      if (!list(item.reasons).length) reasons.append(element('li','No explanation supplied.'));
+      card.append(reasons);
+      if (list(item.counterfactuals).length) { card.append(element('p','Suggested changes (not applied):','sub')); const suggestions = element('ul'); for (const suggestion of item.counterfactuals) suggestions.append(element('li',suggestion)); card.append(suggestions); }
+      return card;
+    },'No unscheduled tasks reported by the current plan.');
+    tableRows('aircraft',list(state.aircraft),[a=>a.id,a=>a.base,a=>minute(a.ready_at),a=>fmt(a.fuel),a=>fmt(a.serviceability)],'No aircraft reported.');
+    tableRows('tasks',tasks,[t=>t.id,t=>t.kind,t=>t.priority,t=>t.base,t=>minute(t.earliest),t=>minute(t.deadline),t=>fmt(t.duration),t=>t.status],'No relief tasks reported.');
+    renderList('events',list(state.events).slice(-35).reverse(),event=>{ const item=element('article',undefined,'event'); item.append(element('small',`${numeric(event.time) ? minute(event.time) : text(event.time)} · ${text(event.kind)}`),element('p',event.description)); return item; },'No simulation events yet.');
+    renderList('pending',list(state.pending),proposal=>{
+      const card=element('article',undefined,'detail-item');
+      card.append(element('h3',`${text(proposal.id)} · ${text(proposal.status)}`),element('p',proposal.description,'sub'),element('p',`Recorded approvals: ${list(proposal.approvals).map(text).join(', ') || 'none'}`,'sub'));
+      if (proposal.id !== undefined && proposal.id !== null) { const button=element('button','Select for review'); button.type='button'; button.style.marginTop='8px'; button.addEventListener('click',()=>{ $('proposal-id').value=proposal.id; $('reviewer').focus(); }); card.append(button); }
+      return card;
+    },'No proposals reported. Generate a preview to begin a review.');
+    $('audit').textContent = auditVerification || auditText(state.audit);
+    renderList('contingencies',list(state.contingencies),item=>{ const card=element('article',undefined,'detail-item'); card.append(element('h3',`${text(item.key)} · ${item.ready ? 'Ready' : 'Not ready'}`),element('p',item.description,'sub'),element('p',`Version ${text(item.version)}`,'sub')); return card; },'No contingency readiness reported.');
+    updateOptions('scenario-aircraft',list(state.aircraft).map(a=>a.id));
+    const bases = list(state.bases).map(base=>typeof base === 'string' ? base : base.id);
+    updateOptions('scenario-base',bases); updateOptions('weather-base',bases);
+    if (!weightsDirty) syncWeights(state.weights);
+  }
+  for (const key of weightKeys) {
+    const label=element('label'), heading=element('span',undefined,'slider-label'), output=element('output','—');
+    output.id=`weight-value-${key}`; output.htmlFor=`weight-${key}`;
+    heading.append(element('span',labels[key]),output);
+    const input=element('input'); input.type='range'; input.id=`weight-${key}`; input.min='0'; input.max='10'; input.step='0.1'; input.value='1'; input.disabled=true;
+    input.addEventListener('input',()=>{
+      output.textContent=fmt(Number(input.value)); weightsDirty=true; weightRevision++; clearTimeout(weightTimer);
+      $('weight-status').textContent='Unsaved preference changes…';
+      weightTimer=setTimeout(saveWeights,650);
+    });
+    label.append(heading,input); $('sliders').append(label);
+  }
+  function syncWeights(weights) {
+    if (!weights) return;
+    for (const key of weightKeys) {
+      const input=$('weight-'+key), value=weights[key];
+      if (!numeric(value) || value < 0) continue;
+      input.disabled=false; input.max=String(Math.max(10,Math.ceil(value))); input.value=value;
+      $('weight-value-'+key).textContent=fmt(value);
+    }
+    if (!$('weight-status').dataset.feedback) $('weight-status').textContent='Weights loaded. At least one weight must be positive.';
+  }
+  async function saveWeights() {
+    const revision=weightRevision;
+    const weights=Object.fromEntries(weightKeys.map(key=>[key,Number($('weight-'+key).value)]));
+    $('weight-status').dataset.feedback='true';
+    if (Object.values(weights).reduce((sum,value)=>sum+value,0)<=0) { $('weight-status').textContent='Not saved: at least one weight must be positive.'; return; }
+    $('weight-status').textContent='Saving preferences…';
+    try {
+      await changeState('/api/preferences',weights);
+      if (revision===weightRevision) { weightsDirty=false; syncWeights(state.weights); $('weight-status').textContent='Preferences accepted by the server. Current plan metrics shown above.'; }
+    } catch(error) { if (revision===weightRevision) $('weight-status').textContent=`Not saved: ${error.message} Adjust a slider to retry.`; announce(error.message,true); }
+  }
+  $('pause').addEventListener('click',()=>busy($('pause'),async()=>{ if (!state) throw new Error('Wait for simulation state.'); await changeState('/api/control',{paused:!state.paused}); }));
+  $('speed-form').addEventListener('submit',event=>{ event.preventDefault(); busy(event.submitter,()=>changeState('/api/control',{speed:Number($('speed').value)})); });
+  $('reset-form').addEventListener('submit',event=>{
+    event.preventDefault(); const seed=Number($('seed').value);
+    if (!Number.isSafeInteger(seed)) { announce('Enter a valid integer seed.',true); return; }
+    if (!window.confirm('Reset this simulation? Current plans and pending reviews may be replaced.')) return;
+    busy(event.submitter,async()=>{
+      clearTimeout(weightTimer); weightRevision++; weightsDirty=false; auditVerification=null;
+      await changeState('/api/reset',{seed});
+      $('preview').textContent='Simulation reset. Generate a new preview before submitting approvals.'; $('proposal-id').value=''; $('reviewer-token').value=''; $('approval-status').textContent='';
+      $('frontier').replaceChildren(svgNode('text',{x:310,y:125,'text-anchor':'middle'},'Simulation reset. Reload candidates.')); $('frontier-detail').hidden=true;
+    });
+  });
+  function scenarioFields() {
+    const type=$('scenario').value;
+    for (const [field,control,show] of [['aircraft-field','scenario-aircraft',type==='aircraft_delay'],['base-field','scenario-base',type!=='aircraft_delay'],['minutes-field','scenario-minutes',type!=='relief_request'],['priority-field','scenario-priority',type==='relief_request'],['duration-field','scenario-duration',type==='relief_request']]) {
+      $(field).hidden=!show; $(control).disabled=!show; $(control).required=show;
+    }
+  }
+  $('scenario').addEventListener('change',scenarioFields); scenarioFields();
+  function previewText(result) {
+    if (!result || !result.preview || !result.baseline) throw new Error('Server returned no baseline/preview comparison. No approval was submitted.');
+    const lines=['SCENARIO PREVIEW — not an applied change',JSON.stringify(result.scenario,null,2),'', 'Metric: baseline → preview'];
+    for (const key of metricKeys) if (result.baseline[key]!==undefined || result.preview[key]!==undefined) lines.push(`${labels[key]}: ${metricFmt(key,result.baseline[key])} → ${metricFmt(key,result.preview[key])}`);
+    for (const [label,metrics] of [['Baseline',result.baseline],['Preview',result.preview]]) {
+      if (Array.isArray(metrics.robustness_ci)) lines.push(`${label} synthetic robustness interval: ${intervalFmt(metrics.robustness_ci)}`);
+      if (metrics.robustness_note) lines.push(`${label} limitation: ${text(metrics.robustness_note)}`);
+    }
+    lines.push('',`Proposal: ${text(result.proposal_id)}`,`Requires approval: ${result.requires_approval===true ? 'yes' : 'not confirmed by server'}`,'Review the scenario and comparison before approving.');
+    $('preview').textContent=lines.join('\n');
+    if (result.proposal_id!==undefined && result.proposal_id!==null) $('proposal-id').value=result.proposal_id;
+    poll();
+  }
+  $('whatif-form').addEventListener('submit',event=>{
+    event.preventDefault(); const type=$('scenario').value, scenario={type};
+    if (type==='aircraft_delay') scenario.aircraft_id=$('scenario-aircraft').value; else scenario.base=$('scenario-base').value;
+    if (type==='relief_request') { scenario.priority=Number($('scenario-priority').value); scenario.duration=Number($('scenario-duration').value); } else scenario.minutes=Number($('scenario-minutes').value);
+    busy(event.submitter,async()=>{ $('preview').textContent='Requesting a scenario preview…'; previewText(await api('/api/whatif',{scenario})); },$('preview'));
+  });
+  $('copilot-form').addEventListener('submit',event=>{
+    event.preventDefault(); const input=$('copilot-text').value.trim();
+    if (!input) { $('preview').textContent='Enter a scenario description first.'; return; }
+    busy(event.submitter,async()=>{ $('preview').textContent='Requesting a structured scenario preview…'; previewText(await api('/api/copilot',{text:input,provider:$('provider').value},45000)); },$('preview'));
+  });
+  $('approval-form').addEventListener('submit',event=>{
+    event.preventDefault(); const body={proposal_id:$('proposal-id').value.trim(),reviewer:$('reviewer').value.trim(),token:$('reviewer-token').value};
+    if (!body.proposal_id || !body.reviewer) { $('approval-status').textContent='Proposal ID and reviewer cannot be blank.'; return; }
+    busy(event.submitter,async()=>{
+      try {
+        const result=await changeState('/api/approve',body);
+        const proposal=list(result.pending).find(item=>String(item.id)===body.proposal_id);
+        $('approval-status').textContent=proposal ? `Server accepted the submission. Proposal status: ${text(proposal.status)}. Recorded approvals: ${list(proposal.approvals).map(text).join(', ') || 'none'}.` : 'Server accepted the submission and returned updated state. Proposal is no longer listed; inspect the event feed and schedule for its outcome.';
+      } finally { $('reviewer-token').value=''; }
+    },$('approval-status'));
+  });
+  $('verify').addEventListener('click',()=>busy($('verify'),async()=>{
+    const result=await api('/api/audit/verify'); auditVerification=`Explicit verification at ${new Date().toLocaleTimeString()}\n${auditText(result)}\nSnapshot result; later events may add entries.`; $('audit').textContent=auditVerification;
+  },$('audit')));
+  $('weather-form').addEventListener('submit',event=>{
+    event.preventDefault();
+    const query=new URLSearchParams({base:$('weather-base').value,latitude:$('latitude').value,longitude:$('longitude').value});
+    busy(event.submitter,async()=>{
+      $('weather-result').hidden=false; $('weather-result').textContent='Fetching optional observation…';
+      const result=await api(`/api/weather?${query}`);
+      $('weather-result').textContent=`Informational observation — not used for safety decisions\nRequested at ${new Date().toLocaleString()}\n${JSON.stringify(result,null,2)}`;
+    },$('weather-result'));
+  });
+  function svgNode(tag, attributes, value) {
+    const node=document.createElementNS('http://www.w3.org/2000/svg',tag);
+    for (const [key,val] of Object.entries(attributes)) node.setAttribute(key,String(val));
+    if (value!==undefined) node.textContent=text(value);
+    return node;
+  }
+  function drawFrontier(data) {
+    const svg=$('frontier'); svg.replaceChildren(); $('frontier-detail').hidden=true;
+    const plans=list(data.plans).filter(plan=>numeric(plan.metrics?.coverage)&&numeric(plan.metrics?.risk));
+    $('frontier-note').textContent=`${text(data.note || 'Heuristic candidates; optimality is not guaranteed.')} Snapshot loaded at ${new Date().toLocaleTimeString()}; reload after state changes.`;
+    if (!plans.length) { svg.append(svgNode('text',{x:310,y:125,'text-anchor':'middle'},'No candidates with numeric coverage and risk returned.')); return; }
+    const xs=plans.map(plan=>plan.metrics.coverage), ys=plans.map(plan=>plan.metrics.risk);
+    function extent(values) { const low=Math.min(...values),high=Math.max(...values); const pad=(high-low)*0.12 || 0.1; return [Math.max(0,low-pad),Math.min(1,high+pad)]; }
+    const [xmin,xmax]=extent(xs),[ymin,ymax]=extent(ys);
+    const x=value=>65+(value-xmin)/(xmax-xmin)*530, y=value=>220-(value-ymin)/(ymax-ymin)*190;
+    for (let i=0;i<=4;i++) {
+      const xv=xmin+(xmax-xmin)*i/4,yv=ymin+(ymax-ymin)*i/4;
+      svg.append(svgNode('line',{x1:65,y1:y(yv),x2:595,y2:y(yv),stroke:'#2b3a50'}),svgNode('text',{x:55,y:y(yv)+4,'text-anchor':'end'},percent(yv)),svgNode('text',{x:x(xv),y:240,'text-anchor':'middle'},percent(xv)));
+    }
+    svg.append(svgNode('line',{x1:65,y1:30,x2:65,y2:220,stroke:'#647c99'}),svgNode('text',{x:330,y:264,'text-anchor':'middle'},'Coverage (%)'),svgNode('text',{x:16,y:125,transform:'rotate(-90 16 125)','text-anchor':'middle'},'Risk (%)'));
+    for (const plan of plans) {
+      const description=`Candidate ${text(plan.id)}: coverage ${percent(plan.metrics.coverage)}, risk ${percent(plan.metrics.risk)}, fuel ${fmt(plan.metrics.fuel)}, disruption ${percent(plan.metrics.disruption)}`;
+      const dot=svgNode('circle',{cx:x(plan.metrics.coverage),cy:y(plan.metrics.risk),r:7,class:'dot',tabindex:0,role:'button','aria-label':description});
+      dot.append(svgNode('title',{},description));
+      const select=()=>{ $('frontier-detail').hidden=false; $('frontier-detail').textContent=[`Candidate ${text(plan.id)} — comparison only`,...metricKeys.filter(key=>plan.metrics[key]!==undefined).map(key=>`${labels[key]}: ${metricFmt(key,plan.metrics[key])}`),`Synthetic robustness interval: ${intervalFmt(plan.metrics.robustness_ci)}`,`Robustness limitation: ${text(plan.metrics.robustness_note)}`,`Weights: ${JSON.stringify(plan.weights)}`,'Selecting this point does not apply a plan.'].join('\n'); };
+      dot.addEventListener('click',select); dot.addEventListener('keydown',event=>{ if(event.key==='Enter'||event.key===' ') { event.preventDefault(); select(); } }); svg.append(dot);
+    }
+  }
+  $('frontier-load').addEventListener('click',()=>busy($('frontier-load'),async()=>drawFrontier(await api('/api/frontier')),$('frontier-detail')));
+  poll();
+  setInterval(poll,2000);
+  document.addEventListener('visibilitychange',()=>{ if(!document.hidden) poll(); });
+})();
+</script>
+</body>
+</html>

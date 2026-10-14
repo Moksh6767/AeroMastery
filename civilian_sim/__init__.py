@@ -1,0 +1,1 @@
+"""Standalone synthetic civilian disaster-response scheduling demonstrator."""
